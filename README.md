@@ -1,13 +1,11 @@
-# Formulario NAS (100% Web, sin servidor)
-Calcula NAS, valida exclusiones y guarda cada evaluación en:
-- Historial local (localStorage)
-- (Opcional) Supabase sin backend propio
+# Formulario NAS v3 (Agrupado + Fecha/Hora)
+Novedades:
+- Catálogo agrupado por secciones (1 a 23) con paneles plegables
+- Campo de **fecha/hora** manual (por defecto toma la hora local actual)
+- Mantiene mejoras de v2: búsqueda, duplicar última, imprimir, CSV extendido, coma en UI
 
-## Publicar rápido
-- GitHub Pages: sube `index.html` y la carpeta `assets/` → Settings → Pages.
-- Netlify / Vercel: arrastra la carpeta del proyecto.
+## Publicación
+Sube `index.html` y carpeta `assets/` a GitHub Pages / Netlify / Vercel.
 
 ## Supabase (opcional)
-1) Crea proyecto en supabase.com
-2) Ejecuta `schema.sql`
-3) En `assets/app.js` rellena `SUPABASE_URL` y `SUPABASE_ANON_KEY` y descomenta el guardado.
+Configura `SUPABASE_URL` y `SUPABASE_ANON_KEY` en `assets/app.js` y descomenta el guardado.

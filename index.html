@@ -9,7 +9,7 @@
 <body>
   <main class="container">
     <h1>Aplicación de la Escala NAS</h1>
-    <p class="muted">Complete los datos del paciente y seleccione los ítems correspondientes. El puntaje se calcula automáticamente.</p>
+    <p class="muted">Complete los datos, seleccione ítems y guarde. Catálogo agrupado por secciones, fecha/hora manual y utilidades.</p>
 
     <form id="nasForm">
       <section class="card">
@@ -21,22 +21,49 @@
           <label>Identificador (RUT u otro)
             <input type="text" name="identifier" placeholder="Opcional">
           </label>
+          <label>Unidad/Box
+            <input type="text" name="unit" placeholder="Ej: UPCA Box 3">
+          </label>
+          <label>Turno
+            <select name="shift">
+              <option value="Día">Día</option>
+              <option value="Noche">Noche</option>
+            </select>
+          </label>
+          <label>Fecha y hora de evaluación
+            <input type="datetime-local" name="created_at">
+          </label>
         </div>
         <label>Nota (opcional)
-          <textarea name="note" rows="3" placeholder="Observaciones clínicas, turno, etc."></textarea>
+          <textarea name="note" rows="3" placeholder="Observaciones de turno, procedimientos, etc."></textarea>
         </label>
       </section>
 
       <section class="card">
         <h2>Ítems NAS</h2>
-        <div id="catalogGrid" class="grid"></div>
+        <div class="row">
+          <label>Buscar ítem
+            <input type="text" id="searchBox" placeholder="Filtrar por código o texto...">
+          </label>
+          <label>Expandir/Contraer
+            <select id="toggleAll">
+              <option value="expand">Expandir todo</option>
+              <option value="collapse">Contraer todo</option>
+            </select>
+          </label>
+        </div>
+        <div id="catalogGroups"></div>
         <div id="validationBox" class="warn" style="display:none;"></div>
       </section>
 
       <section class="card">
         <h2>Resumen</h2>
-        <p><strong>Puntaje total:</strong> <span id="totalScore">0.0</span></p>
-        <button type="submit">Guardar evaluación</button>
+        <p><strong>Puntaje total:</strong> <span id="totalScore">0,0</span></p>
+        <div class="row">
+          <button type="submit">Guardar evaluación</button>
+          <button type="button" id="dupLast">Duplicar última</button>
+          <button type="button" id="printBtn">Imprimir</button>
+        </div>
       </section>
     </form>
 
