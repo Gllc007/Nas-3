@@ -1,10 +1,26 @@
-# Formulario NAS v4 (Lista simple)
-- Ítems sin agrupación (lista plana).
-- Campos eliminados: **Nombre** y **Unidad/Box**.
-- Se mantienen: **Identificador**, **Turno**, **Fecha/Hora**, **Nota**.
-- Calcula puntaje, historial local, duplicar, imprimir y exportar CSV.
+# Formulario NAS v6 (Orden + Zebra + listo para GitHub)
+- Lista simple en el mismo orden de la tabla: 1a → 1b → 1c → 2 → 3 → 4a → 4b → 4c → 5 → 6a → 6b → 6c → 7a → 7b → 8a → 8b → 8c → 9 → 10 → 11 → 12 → 13 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → 21 → 22 → 23
+- Franjas alternadas (zebra) en las tarjetas de ítems para mejor lectura.
+- Eliminados: **Nombre** y **Unidad/Box**; Se mantienen: **Identificador**, **Turno**, **Fecha/Hora**, **Nota**.
+- Cálculo de puntaje, validaciones de exclusión, historial local, duplicar, imprimir, exportar CSV.
 
-## Catálogo completo
+## Estructura lista para subir a GitHub
+```
+nas_form_web_v6/
+ ├─ index.html
+ ├─ assets/
+ │   ├─ styles.css
+ │   └─ app.js
+ └─ README.md
+```
+
+## Publicación rápida en GitHub Pages
+1. Crea un repositorio (ej.: `nas-form-web`).
+2. Sube **todos** los archivos manteniendo la carpeta `assets/`.
+3. En el repo: **Settings → Pages → Source: Deploy from a branch** → selecciona `main` / `/root` → Save.
+4. Abre la URL que te entrega GitHub Pages.
+
+## Catálogo en orden
 - **1a** — Control de Signos Vitales por horario — 4.5 pts
 - **1b** — Observación continua o activa durante 2 horas o más — 12.1 pts
 - **1c** — Observación continua o activa 4 horas o más — 19.6 pts
@@ -37,6 +53,3 @@
 - **21** — Nutrición enteral — 1.3 pts
 - **22** — Intervenciones específicas en UCI (instalación CVC, PICC, etc.) — 2.8 pts
 - **23** — Intervenciones específicas fuera de la UCI (TAC, RNM, RX, etc.) — 1.9 pts
-
-## Publicación
-Sube `index.html` y carpeta `assets/` a GitHub Pages / Netlify / Vercel.
